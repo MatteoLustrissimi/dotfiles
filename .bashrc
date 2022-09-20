@@ -5,7 +5,6 @@
 # that can't tolerate any output.  So make sure this doesn't display
 # anything or bad things will happen !
 
-
 # Test for an interactive shell.  There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
@@ -14,7 +13,6 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-
 # Put your fun stuff here.
 # Modify the PS1 variable to adjust command prompt
 # /u the username of the current user
@@ -22,7 +20,6 @@ fi
 # /w the  current  working  directory, with $HOME abbreviated with a tilde (uses the value of the PROMPT_DIRTRIM variable)
 # /$ if the effective UID is 0, a #, otherwise a $
 # For more PS1 options see the PROMPTING section of `man 1 bash`
-# Gentoo (/etc/bash/bashrc)
 if [[ ${EUID} == 0 ]] ; then
     PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
 else
@@ -48,6 +45,9 @@ stty -ixon
 rm() { command rm -i "${@}"; }
 cp() { command cp -i "${@}"; }
 mv() { command mv -i "${@}"; }
+
+# Configure completion
+complete -cf doas
 
 # use alias
 alias egrep='grep -E --colour=auto'
