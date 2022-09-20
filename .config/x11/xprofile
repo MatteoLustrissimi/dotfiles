@@ -1,5 +1,4 @@
 #!/bin/bash
 xwallpaper --maximize ~/.cache/xwallpaper.jpg &
-pgrep mpd || mpd &
-dunst &
-unclutter &
+pgrep dunst || dunst &
+pgrep unclutter || unclutter &
