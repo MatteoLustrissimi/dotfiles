@@ -24,11 +24,11 @@ else
 fi
 
 # Permission xhost
-. /etc/X11/xinit/xinitrc.d/00-xhost &
+#. /etc/X11/xinit/xinitrc.d/00-xhost &
 
 # Load .Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-/usr/bin/gentoo-pipewire-launcher &
+/usr/bin/pipewire &
 
 dbus-launch --exit-with-session dwm
