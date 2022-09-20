@@ -1,0 +1,7 @@
+#!/bin/bash
+xwallpaper --maximize ~/.config/wall.jpg &
+pgrep mpd || mpd &
+# some compositor ?
+slstatus &
+dunst &
+unclutter &
