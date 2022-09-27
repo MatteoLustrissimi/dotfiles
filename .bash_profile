@@ -8,7 +8,9 @@
 
 
 if shopt -q login_shell; then
-    [[ -t 0 && $(tty) == /dev/tty1 && ! $DISPLAY ]] && exec startx $XINITRC -- vt1
+    [[ -t 0 && $(tty) == /dev/tty1 && ! $DISPLAY ]] && {
+    exec startx $XINITRC -nolisten tcp :0 -- vt1 1>|~/.local/share/xorg/xsession-errors 2>&1
+    }
 else
     exit 1 # Somehow this is a non-bash or non-login shell.
 fi
