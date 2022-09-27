@@ -1,5 +1,5 @@
 #!/bin/bash
-[ -f ~/.config/xwallpaper.jpg ] && xwallpaper --maximize ~/.cache/xwallpaper.jpg &
+[ -f ~/.cache/xwallpaper.jpg ] && xwallpaper --maximize ~/.cache/xwallpaper.jpg &
 /usr/bin/pipewire &
 dunst &
 unclutter &
