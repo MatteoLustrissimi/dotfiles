@@ -1,4 +1,5 @@
 #!/bin/bash
-xwallpaper --maximize ~/.cache/xwallpaper.jpg &
-pgrep dunst || dunst &
-pgrep unclutter || unclutter &
+[ -f ~/.config/xwallpaper.jpg ] && xwallpaper --maximize ~/.cache/xwallpaper.jpg &
+/usr/bin/pipewire &
+dunst &
+unclutter &
