@@ -14,9 +14,9 @@
 #	dbus-daemon --session --address=unix:path="$XDG_RUNTIME_DIR"/bus 2>&1 |
 #       		"$STARTW_ROOT"/addts >> "$STARTW_LOG_FILE" &
 #fi
-
+ 
 # Load .Xresources
-[ -f ~/.Xresources ] && xrdb -merge -I $HOME ~/.Xresources
+[ -f ~/.config/x11/xresources ] && xrdb -merge -I $HOME ~/.config/x11/xresources
 
 # Load ~/.config/x11/xprofile
 if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile" ]; then
