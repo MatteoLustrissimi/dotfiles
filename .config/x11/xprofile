@@ -2,4 +2,4 @@
 [ -f ~/.cache/xwallpaper.jpg ] && xwallpaper --maximize ~/.cache/xwallpaper.jpg &
 /usr/bin/pipewire &
 dunst &
-unclutter &
+unclutter -grab &
